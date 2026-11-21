@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: predictive-maintenance-suite
+    name: team-c-predictive-maintenance
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
@@ -9,3 +9,7 @@ services:
         value: 3.10.12
       - key: PORT
         value: 10000
+      - key: APP_NAME
+        value: "Team C MachinePulse Predictive Maintenance OS"
+      - key: BATCH_ID
+        value: "Infosys Springboard Batch 4"

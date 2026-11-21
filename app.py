@@ -21,15 +21,15 @@ except Exception as e:
 
 # Modern Streamlit Navigation (Streamlit 1.36+)
 pages = [
-    st.Page("src/pages/1_Overview.py", title="Overview", icon="📊", default=True),
-    st.Page("src/pages/2_Failure_Prediction.py", title="Failure Prediction", icon="🔮"),
-    st.Page("src/pages/3_Equipment_Monitoring.py", title="Equipment Monitoring", icon="⚙️"),
-    st.Page("src/pages/4_Anomaly_Detection.py", title="Anomaly Detection", icon="🔍"),
-    st.Page("src/pages/5_Equipment_Alerts.py", title="Equipment Alerts", icon="🚨"),
-    st.Page("src/pages/6_Maintenance.py", title="Maintenance", icon="🛠️"),
-    st.Page("src/pages/7_Trends_Reports.py", title="Trends & Reports", icon="📈"),
-    st.Page("src/pages/8_Advanced_ML.py", title="Advanced ML (T38–T45)", icon="⚡"),
-    st.Page("src/pages/9_Live_Monitoring.py", title="Live Machine Health", icon="📡"),
+    st.Page("src/pages/1_Fleet_Overview.py", title="Overview", icon="📊", default=True),
+    st.Page("src/pages/2_Predictive_Studio.py", title="Failure Prediction", icon="🔮"),
+    st.Page("src/pages/3_Machinery_Telemetry.py", title="Equipment Monitoring", icon="⚙️"),
+    st.Page("src/pages/4_Anomaly_Engine.py", title="Anomaly Detection", icon="🔍"),
+    st.Page("src/pages/5_SCADA_Alert_Center.py", title="Equipment Alerts", icon="🚨"),
+    st.Page("src/pages/6_Maintenance_Scheduler.py", title="Maintenance", icon="🛠️"),
+    st.Page("src/pages/7_Analytics_and_Reports.py", title="Trends & Reports", icon="📈"),
+    st.Page("src/pages/8_Advanced_Diagnostics.py", title="Advanced ML (T38–T45)", icon="⚡"),
+    st.Page("src/pages/9_Realtime_Health_Stream.py", title="Live Machine Health", icon="📡"),
 ]
 
 pg = st.navigation(pages)

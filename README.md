@@ -111,35 +111,35 @@ infosys-batch4-team-c-ml-equipment-failure/
 │
 ├── models/
 │   ├── random_forest_model.joblib  # Production Binary Failure Predictor (99.05% Accuracy, 86.13% PR-AUC)
-│   ├── failure_type_model.joblib   # 6-Class Multiclass Root-Cause Diagnostic Classifier (Task T38)
+│   ├── failure_type_model.joblib   # 6-Class Root-Cause Diagnostic Classifier (Overstrain, HDF, PWF, TWF, RNF)
 │   ├── model_metadata.json         # Evaluation metrics, hyperparameters, and feature rankings
 │   └── multiclass_metadata.json    # Multiclass confusion matrix and per-class metrics
 │
 ├── notebooks/
-│   ├── 01_exploratory_data_analysis.ipynb                # Telemetry distributions, correlations & physics
-│   ├── 02_model_training_and_tuning.ipynb                # Stratified split, class weighting & calibration
-│   └── 03_advanced_tasks_T38_T45_multiclass_and_shap.ipynb # Tasks T38-T45, TreeSHAP & stress simulations
+│   ├── 01_EDA_and_Telemetry_Profiling.ipynb              # Telemetry distributions, correlations & physics
+│   ├── 02_Model_Training_and_Evaluation.ipynb            # Stratified split, class weighting & calibration
+│   └── 03_Failure_Mode_Classification_and_SHAP.ipynb     # Root cause classification, TreeSHAP & stress simulations
 │
 ├── reports/
-│   ├── evaluation_report.md        # Comprehensive technical evaluation & model benchmark report
-│   └── system_architecture.md      # End-to-end industrial architecture & data flow diagrams
+│   ├── model_evaluation_report.md  # Comprehensive technical evaluation & model benchmark report
+│   └── system_architecture_design.md# End-to-end industrial architecture & data flow diagrams
 │
 ├── sql/
-│   ├── schema.sql                  # Complete SQLite DDL schema (equipment, predictions, alerts, work orders)
-│   ├── seed_data.sql               # Initial operational seed data for testing and demonstration
-│   └── queries.sql                 # SCADA monitoring and fleet analytics SQL queries
+│   ├── init_telemetry_schema.sql   # Complete SQLite DDL schema (equipment, predictions, alerts, work orders)
+│   ├── seed_machinery_records.sql  # Initial operational seed data for testing and demonstration
+│   └── analytical_kpi_queries.sql  # SCADA monitoring and fleet analytics SQL queries
 │
 ├── src/
 │   ├── pages/                      # Multi-Page Interactive Dashboard Modules
-│   │   ├── 1_Overview.py           # Fleet KPIs, Hero Bento & health distribution
-│   │   ├── 2_Failure_Prediction.py # Dual-unit input (C/K), presets & radial gauge
-│   │   ├── 3_Equipment_Monitoring.py # Machinery registry & telemetry drilldown
-│   │   ├── 4_Anomaly_Detection.py  # Outlier detection & dynamic scatter envelope
-│   │   ├── 5_Equipment_Alerts.py   # Actionable SCADA alert lifecycle management
-│   │   ├── 6_Maintenance.py        # Work order scheduling & technician assignment
-│   │   ├── 7_Trends_Reports.py     # Heatmap, correlation & model evaluation
-│   │   ├── 8_Advanced_ML.py        # 6-class classifier, benchmarks, SHAP & stress test
-│   │   └── 9_Live_Monitoring.py    # Industrial live health monitoring & sensor ingestion
+│   │   ├── 1_Fleet_Overview.py     # Fleet KPIs, Hero Bento & health distribution
+│   │   ├── 2_Predictive_Studio.py  # Dual-unit input (C/K), presets & radial gauge
+│   │   ├── 3_Machinery_Telemetry.py# Machinery registry & telemetry drilldown
+│   │   ├── 4_Anomaly_Engine.py     # Outlier detection & dynamic scatter envelope
+│   │   ├── 5_SCADA_Alert_Center.py # Actionable SCADA alert lifecycle management
+│   │   ├── 6_Maintenance_Scheduler.py# Work order scheduling & technician assignment
+│   │   ├── 7_Analytics_and_Reports.py# Heatmap, correlation & model evaluation
+│   │   ├── 8_Advanced_Diagnostics.py # 6-class classifier, benchmarks, SHAP & stress test
+│   │   └── 9_Realtime_Health_Stream.py# Industrial live health monitoring & sensor ingestion
 │   ├── __init__.py
 │   ├── styles.py                   # Obsidian & Slate industrial theme CSS tokens & chart stylers
 │   ├── data_loader.py              # Data ingestion, cleaning, and cached loading
@@ -155,22 +155,22 @@ infosys-batch4-team-c-ml-equipment-failure/
 │
 ├── static/
 │   ├── css/
-│   │   └── dashboard.css           # Industrial dashboard styles & design tokens
+│   │   └── industrial_telemetry.css# Industrial dashboard styles & design tokens
 │   └── js/
-│       └── telemetry.js            # Telemetry streaming & visual animation helpers
+│       └── stream_engine.js        # Telemetry streaming & visual animation helpers
 │
 ├── templates/
-│   ├── index.html                  # Telemetry OS interface layout template
+│   ├── telemetry_console.html      # Telemetry OS interface layout template
 │   └── components/
-│       ├── telemetry_card.html     # Reusable telemetry KPI card component
-│       └── alert_banner.html       # SCADA alert banner template
+│       ├── kpi_stat_card.html      # Reusable telemetry KPI card component
+│       └── scada_alert_badge.html  # SCADA alert banner template
 │
 ├── tests/
 │   ├── __init__.py
-│   ├── test_data_pipeline.py       # Dataset validation & feature engineering tests
-│   ├── test_model_inference.py     # Binary & multiclass inference unit tests
-│   ├── test_database.py            # SQLite schema & CRUD lifecycle tests
-│   └── test_advanced_analytics.py  # Anomaly detection & analytics benchmark tests
+│   ├── test_dataset_pipeline.py    # Dataset validation & feature engineering tests
+│   ├── test_prediction_engine.py   # Binary & multiclass inference unit tests
+│   ├── test_sqlite_persistence.py  # SQLite schema & CRUD lifecycle tests
+│   └── test_analytics_benchmarks.py# Anomaly detection & analytics benchmark tests
 │
 ├── .env.example                    # Sample environment variables for production & local execution
 ├── .gitignore                      # Git ignore file excluding virtualenv, cache, and OS artifacts
@@ -178,7 +178,7 @@ infosys-batch4-team-c-ml-equipment-failure/
 ├── Procfile                        # Cloud deployment process definition (Render / Heroku)
 ├── README.md                       # Complete project documentation & setup instructions
 ├── app.py                          # Application entrypoint & multi-page navigation router
-├── hyperparameter_experiment_log.md# Comprehensive experiment tracking & model comparison log
+├── model_experiment_tuning_log.md  # Comprehensive experiment tracking & model comparison log
 ├── render.yaml                     # Render deployment blueprint
 └── requirements.txt                # Production Python dependencies
 ```
