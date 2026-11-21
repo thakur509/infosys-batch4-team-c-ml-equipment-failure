@@ -1,0 +1,41 @@
+/* Industrial Telemetry Dashboard Styles - Obsidian & Slate Design Tokens */
+:root {
+  --bg-primary: #0B0F19;
+  --bg-surface: #111827;
+  --border-subtle: #1F2937;
+  --accent-blue: #3B82F6;
+  --text-main: #F9FAFB;
+  --text-muted: #9CA3AF;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --success: #10B981;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+.telemetry-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.telemetry-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.telemetry-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}

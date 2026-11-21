@@ -6,7 +6,10 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-DATASET_PATH = Path(__file__).resolve().parent.parent / "ai4i2020.csv"
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DATASET_PATH = ROOT_DIR / "data" / "ai4i2020.csv"
+if not DATASET_PATH.exists():
+    DATASET_PATH = ROOT_DIR / "ai4i2020.csv"
 
 # Column name definitions
 RAW_NUMERIC_FEATURES = [

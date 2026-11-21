@@ -104,51 +104,83 @@ An industrial-grade, full-stack Machine Failure Prediction and Predictive Mainte
 ## 📂 Project Structure
 
 ```text
-Predictive-Maintenance/
-│
-├── app.py                      # Main entrypoint with st.navigation & layout
-├── ai4i2020.csv                # AI4I 2020 Predictive Maintenance dataset (10,000 rows)
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
-├── run_dashboard.ps1           # Windows PowerShell launch helper
-├── run_dashboard.bat           # Windows Batch launch helper
-│
-├── src/
-│   ├── __init__.py
-│   ├── styles.py               # Custom Obsidian & Slate industrial CSS & UI components
-│   ├── data_loader.py          # Data loading, cleaning, and caching
-│   ├── preprocessing.py        # Feature engineering and train-test splits
-│   ├── trainmodel.py           # Binary Random Forest training pipeline
-│   ├── train_multiclass.py     # 6-class failure mode classifier
-│   ├── predict.py              # Inference service and prescriptive diagnostics
-│   ├── evaluate.py             # Performance metrics (PR-AUC, Confusion Matrix, F1)
-│   ├── anomaly_detection.py    # IQR boundary analysis and Isolation Forest
-│   ├── advanced_analytics.py   # Benchmark leaderboard, SHAP, threshold tuning, stress test
-│   ├── db_manager.py           # SQLite persistence for alerts, predictions, maintenance
-│   └── verify_system.py        # 8-suite automated system verification
+infosys-batch4-team-c-ml-equipment-failure/
+├── data/
+│   ├── ai4i2020.csv                # AI4I 2020 Predictive Maintenance benchmark dataset (10,000 records)
+│   └── maintenance.db              # SQLite persistence database (seeded with initial fleet telemetry)
 │
 ├── models/
-│   ├── random_forest_model.joblib
-│   ├── failure_type_model.joblib
-│   ├── model_metadata.json
-│   └── failure_type_metadata.json
+│   ├── random_forest_model.joblib  # Production Binary Failure Predictor (99.05% Accuracy, 86.13% PR-AUC)
+│   ├── failure_type_model.joblib   # 6-Class Multiclass Root-Cause Diagnostic Classifier (Task T38)
+│   ├── model_metadata.json         # Evaluation metrics, hyperparameters, and feature rankings
+│   └── multiclass_metadata.json    # Multiclass confusion matrix and per-class metrics
 │
-├── database/
-│   └── maintenance.db          # Persistent SQLite database
+├── notebooks/
+│   ├── 01_exploratory_data_analysis.ipynb                # Telemetry distributions, correlations & physics
+│   ├── 02_model_training_and_tuning.ipynb                # Stratified split, class weighting & calibration
+│   └── 03_advanced_tasks_T38_T45_multiclass_and_shap.ipynb # Tasks T38-T45, TreeSHAP & stress simulations
 │
-├── pages/
-│   ├── 1_Overview.py           # Fleet KPIs, Hero Bento & health distribution
-│   ├── 2_Failure_Prediction.py # Dual-unit input (C/K), presets & radial gauge
-│   ├── 3_Equipment_Monitoring.py # Machinery registry & telemetry drilldown
-│   ├── 4_Anomaly_Detection.py  # Outlier detection & dynamic scatter envelope
-│   ├── 5_Equipment_Alerts.py   # Actionable SCADA alert lifecycle management
-│   ├── 6_Maintenance.py        # Work order scheduling & technician assignment
-│   ├── 7_Trends_Reports.py     # Heatmap, correlation & model evaluation
-│   ├── 8_Advanced_ML.py        # 6-class classifier, benchmarks, SHAP & stress test
-│   └── 9_Live_Monitoring.py    # Industrial live health monitoring & sensor ingestion
+├── reports/
+│   ├── evaluation_report.md        # Comprehensive technical evaluation & model benchmark report
+│   └── system_architecture.md      # End-to-end industrial architecture & data flow diagrams
 │
-└── reports/
-    └── charts/                 # Generated exports directory
+├── sql/
+│   ├── schema.sql                  # Complete SQLite DDL schema (equipment, predictions, alerts, work orders)
+│   ├── seed_data.sql               # Initial operational seed data for testing and demonstration
+│   └── queries.sql                 # SCADA monitoring and fleet analytics SQL queries
+│
+├── src/
+│   ├── pages/                      # Multi-Page Interactive Dashboard Modules
+│   │   ├── 1_Overview.py           # Fleet KPIs, Hero Bento & health distribution
+│   │   ├── 2_Failure_Prediction.py # Dual-unit input (C/K), presets & radial gauge
+│   │   ├── 3_Equipment_Monitoring.py # Machinery registry & telemetry drilldown
+│   │   ├── 4_Anomaly_Detection.py  # Outlier detection & dynamic scatter envelope
+│   │   ├── 5_Equipment_Alerts.py   # Actionable SCADA alert lifecycle management
+│   │   ├── 6_Maintenance.py        # Work order scheduling & technician assignment
+│   │   ├── 7_Trends_Reports.py     # Heatmap, correlation & model evaluation
+│   │   ├── 8_Advanced_ML.py        # 6-class classifier, benchmarks, SHAP & stress test
+│   │   └── 9_Live_Monitoring.py    # Industrial live health monitoring & sensor ingestion
+│   ├── __init__.py
+│   ├── styles.py                   # Obsidian & Slate industrial theme CSS tokens & chart stylers
+│   ├── data_loader.py              # Data ingestion, cleaning, and cached loading
+│   ├── preprocessing.py            # Feature engineering (Thermal Delta, Power kW, Overstrain)
+│   ├── trainmodel.py               # Binary Random Forest training pipeline
+│   ├── train_multiclass.py         # 6-class failure mode classifier
+│   ├── predict.py                  # Real-time inference service & prescriptive action engine
+│   ├── evaluate.py                 # Performance metrics (PR-AUC, Confusion Matrix, F1)
+│   ├── anomaly_detection.py        # IQR boundary analysis and Isolation Forest engine
+│   ├── advanced_analytics.py       # Benchmark leaderboard, SHAP, threshold tuning, stress testing
+│   ├── db_manager.py               # SQLite persistence operations for alerts, predictions & maintenance
+│   └── verify_system.py            # 8-suite automated system verification script
+│
+├── static/
+│   ├── css/
+│   │   └── dashboard.css           # Industrial dashboard styles & design tokens
+│   └── js/
+│       └── telemetry.js            # Telemetry streaming & visual animation helpers
+│
+├── templates/
+│   ├── index.html                  # Telemetry OS interface layout template
+│   └── components/
+│       ├── telemetry_card.html     # Reusable telemetry KPI card component
+│       └── alert_banner.html       # SCADA alert banner template
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_data_pipeline.py       # Dataset validation & feature engineering tests
+│   ├── test_model_inference.py     # Binary & multiclass inference unit tests
+│   ├── test_database.py            # SQLite schema & CRUD lifecycle tests
+│   └── test_advanced_analytics.py  # Anomaly detection & analytics benchmark tests
+│
+├── .env.example                    # Sample environment variables for production & local execution
+├── .gitignore                      # Git ignore file excluding virtualenv, cache, and OS artifacts
+├── LICENSE                         # MIT License
+├── Procfile                        # Cloud deployment process definition (Render / Heroku)
+├── README.md                       # Complete project documentation & setup instructions
+├── app.py                          # Application entrypoint & multi-page navigation router
+├── hyperparameter_experiment_log.md# Comprehensive experiment tracking & model comparison log
+├── render.yaml                     # Render deployment blueprint
+└── requirements.txt                # Production Python dependencies
 ```
 
 ---

@@ -6,8 +6,12 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import pandas as pd
 
-DB_DIR = Path(__file__).resolve().parent.parent / "database"
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DB_DIR = ROOT_DIR / "data"
 DB_PATH = DB_DIR / "maintenance.db"
+# Fallback check if old database folder exists
+if not DB_PATH.exists() and (ROOT_DIR / "database" / "maintenance.db").exists():
+    DB_PATH = ROOT_DIR / "database" / "maintenance.db"
 
 
 def get_connection() -> sqlite3.Connection:

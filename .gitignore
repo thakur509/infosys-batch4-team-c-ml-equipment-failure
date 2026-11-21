@@ -21,5 +21,9 @@ __pycache__/
 Thumbs.db
 desktop.ini
 
-# Streamlit secrets (if any)
-.streamlit/secrets.toml
+# Streamlit internal config (kept local)
+.streamlit/
+
+# Local runner helpers
+run_dashboard.bat
+run_dashboard.ps1

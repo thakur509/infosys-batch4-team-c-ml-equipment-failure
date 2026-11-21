@@ -222,15 +222,15 @@ def run_tests():
     print("\n[8/8] Verifying Syntax of all Page Scripts...")
     page_files = [
         "app.py",
-        "pages/1_Overview.py",
-        "pages/2_Failure_Prediction.py",
-        "pages/3_Equipment_Monitoring.py",
-        "pages/4_Anomaly_Detection.py",
-        "pages/5_Equipment_Alerts.py",
-        "pages/6_Maintenance.py",
-        "pages/7_Trends_Reports.py",
-        "pages/8_Advanced_ML.py",
-        "pages/9_Live_Monitoring.py"
+        "src/pages/1_Overview.py",
+        "src/pages/2_Failure_Prediction.py",
+        "src/pages/3_Equipment_Monitoring.py",
+        "src/pages/4_Anomaly_Detection.py",
+        "src/pages/5_Equipment_Alerts.py",
+        "src/pages/6_Maintenance.py",
+        "src/pages/7_Trends_Reports.py",
+        "src/pages/8_Advanced_ML.py",
+        "src/pages/9_Live_Monitoring.py"
     ]
     import py_compile
     for p in page_files:
