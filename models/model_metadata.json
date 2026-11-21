@@ -1,0 +1,79 @@
+{
+  "model_name": "Random Forest Classifier",
+  "algorithm": "RandomForestClassifier",
+  "class_weight": "balanced_subsample",
+  "n_estimators": 150,
+  "features": [
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "Temp_diff",
+    "Power_kW",
+    "Overstrain"
+  ],
+  "train_samples": 8000,
+  "test_samples": 2000,
+  "metrics": {
+    "accuracy": 0.9905,
+    "precision": 0.9016393442622951,
+    "recall": 0.8088235294117647,
+    "f1": 0.8527131782945736,
+    "roc_auc": 0.9841904152965535,
+    "pr_auc": 0.8612774909522535,
+    "confusion_matrix": {
+      "tn": 1926,
+      "fp": 6,
+      "fn": 13,
+      "tp": 55,
+      "matrix": [
+        [
+          1926,
+          6
+        ],
+        [
+          13,
+          55
+        ]
+      ]
+    },
+    "classification_report": {
+      "0": {
+        "precision": 0.9932955131511089,
+        "recall": 0.9968944099378882,
+        "f1-score": 0.9950917075691036,
+        "support": 1932.0
+      },
+      "1": {
+        "precision": 0.9016393442622951,
+        "recall": 0.8088235294117647,
+        "f1-score": 0.8527131782945736,
+        "support": 68.0
+      },
+      "accuracy": 0.9905,
+      "macro avg": {
+        "precision": 0.947467428706702,
+        "recall": 0.9028589696748265,
+        "f1-score": 0.9239024429318385,
+        "support": 2000.0
+      },
+      "weighted avg": {
+        "precision": 0.9901792034088892,
+        "recall": 0.9905,
+        "f1-score": 0.9902508375737695,
+        "support": 2000.0
+      }
+    },
+    "feature_importances": {
+      "Rotational speed [rpm]": 0.21960561892694347,
+      "Torque [Nm]": 0.17850219337704834,
+      "Power_kW": 0.174700585562318,
+      "Tool wear [min]": 0.1344703356902538,
+      "Overstrain": 0.12787091760459304,
+      "Temp_diff": 0.08884514690484809,
+      "Air temperature [K]": 0.04488883763845407,
+      "Process temperature [K]": 0.031116364295541064
+    }
+  }
+}

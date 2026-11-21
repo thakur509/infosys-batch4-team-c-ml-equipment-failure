@@ -1,0 +1,123 @@
+{
+  "model_name": "Failure-Type Multiclass Classifier",
+  "accuracy": 0.981,
+  "weighted_f1": 0.9825536890890043,
+  "macro_f1": 0.6453725157929349,
+  "class_table": [
+    {
+      "Failure Class": "No Failure",
+      "Precision": "99.48%",
+      "Recall": "98.65%",
+      "F1-Score": "99.06%",
+      "Test Support": 1930
+    },
+    {
+      "Failure Class": "Heat Dissipation (HDF)",
+      "Precision": "90.91%",
+      "Recall": "95.24%",
+      "F1-Score": "93.02%",
+      "Test Support": 21
+    },
+    {
+      "Failure Class": "Power Failure (PWF)",
+      "Precision": "100.00%",
+      "Recall": "100.00%",
+      "F1-Score": "100.00%",
+      "Test Support": 17
+    },
+    {
+      "Failure Class": "Overstrain (OSF)",
+      "Precision": "67.86%",
+      "Recall": "100.00%",
+      "F1-Score": "80.85%",
+      "Test Support": 19
+    },
+    {
+      "Failure Class": "Tool Wear (TWF)",
+      "Precision": "10.53%",
+      "Recall": "22.22%",
+      "F1-Score": "14.29%",
+      "Test Support": 9
+    },
+    {
+      "Failure Class": "Random Failure (RNF)",
+      "Precision": "0.00%",
+      "Recall": "0.00%",
+      "F1-Score": "0.00%",
+      "Test Support": 4
+    },
+    {
+      "Failure Class": "macro avg",
+      "Precision": "61.46%",
+      "Recall": "69.35%",
+      "F1-Score": "64.54%",
+      "Test Support": 2000
+    },
+    {
+      "Failure Class": "weighted avg",
+      "Precision": "98.49%",
+      "Recall": "98.10%",
+      "F1-Score": "98.26%",
+      "Test Support": 2000
+    }
+  ],
+  "classification_report": {
+    "No Failure": {
+      "precision": 0.9947753396029259,
+      "recall": 0.9865284974093265,
+      "f1-score": 0.9906347554630593,
+      "support": 1930.0
+    },
+    "Heat Dissipation (HDF)": {
+      "precision": 0.9090909090909091,
+      "recall": 0.9523809523809523,
+      "f1-score": 0.9302325581395349,
+      "support": 21.0
+    },
+    "Power Failure (PWF)": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 17.0
+    },
+    "Overstrain (OSF)": {
+      "precision": 0.6785714285714286,
+      "recall": 1.0,
+      "f1-score": 0.8085106382978723,
+      "support": 19.0
+    },
+    "Tool Wear (TWF)": {
+      "precision": 0.10526315789473684,
+      "recall": 0.2222222222222222,
+      "f1-score": 0.14285714285714285,
+      "support": 9.0
+    },
+    "Random Failure (RNF)": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "accuracy": 0.981,
+    "macro avg": {
+      "precision": 0.6146168058600001,
+      "recall": 0.6935219453354168,
+      "f1-score": 0.6453725157929349,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.9849237700442329,
+      "recall": 0.981,
+      "f1-score": 0.9825536890890043,
+      "support": 2000.0
+    }
+  },
+  "classes": [
+    "No Failure",
+    "Heat Dissipation (HDF)",
+    "Power Failure (PWF)",
+    "Overstrain (OSF)",
+    "Tool Wear (TWF)",
+    "Random Failure (RNF)"
+  ]
+}
