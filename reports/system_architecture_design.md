@@ -26,4 +26,8 @@
               │
               ▼
 [ Obsidian / Slate Interactive Dashboard ] (Streamlit Multi-Page UI)
+              │
+              ▼
+[ Live Cloud Deployment ] (Render Web Service)
+  URL: https://infosys-batch4-team-c-ml-equipment.onrender.com/
 ```

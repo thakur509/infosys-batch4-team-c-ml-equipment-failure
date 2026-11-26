@@ -3,6 +3,8 @@
 ## 1. Executive Summary
 The predictive maintenance platform implements an end-to-end Machine Learning pipeline utilizing the **AI4I 2020 Predictive Maintenance Dataset** (10,000 observations). The model achieves an **Accuracy of 99.05%**, **Precision-Recall AUC of 86.13%**, and **F1-Score of 85.27%** on a stratified 20% held-out test split.
 
+**Live Application URL**: [https://infosys-batch4-team-c-ml-equipment.onrender.com/](https://infosys-batch4-team-c-ml-equipment.onrender.com/)
+
 ## 2. Model Performance Benchmarks
 | Model Architecture | Test Accuracy | Precision | Recall | F1-Score | PR-AUC | ROC-AUC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

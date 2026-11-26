@@ -3,7 +3,8 @@
 ## Project: Predictive Maintenance & Equipment Health Intelligence
 **Team Attribution**: Infosys Springboard Batch 4 — Team C  
 **Target Dataset**: AI4I 2020 Predictive Maintenance Benchmark (10,000 industrial run-to-failure records)  
-**Primary Metric**: Precision-Recall AUC (PR-AUC) & F1-Score (prioritizing failure recall over unweighted accuracy)
+**Primary Metric**: Precision-Recall AUC (PR-AUC) & F1-Score (prioritizing failure recall over unweighted accuracy)  
+**Live System Deployment**: [https://infosys-batch4-team-c-ml-equipment.onrender.com/](https://infosys-batch4-team-c-ml-equipment.onrender.com/)
 
 ---
 

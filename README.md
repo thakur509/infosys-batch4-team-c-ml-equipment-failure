@@ -1,6 +1,14 @@
 # Predictive Maintenance & Machine Failure Dashboard
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-brightgreen?style=for-the-badge&logo=render)](https://infosys-batch4-team-c-ml-equipment.onrender.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?style=for-the-badge&logo=streamlit)](https://infosys-batch4-team-c-ml-equipment.onrender.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
 An industrial-grade, full-stack Machine Failure Prediction and Predictive Maintenance platform built with **Python**, **Streamlit**, **Scikit-learn**, **Plotly**, and **SQLite**, trained on the benchmark **AI4I 2020 Predictive Maintenance Dataset**.
+
+> 🌐 **Live Web Application**:  
+> Access the live deployed application on Render: **[https://infosys-batch4-team-c-ml-equipment.onrender.com/](https://infosys-batch4-team-c-ml-equipment.onrender.com/)**
 
 ---
 
@@ -187,14 +195,28 @@ infosys-batch4-team-c-ml-equipment-failure/
 
 ## 🚀 Getting Started
 
-### 1. Prerequisites
+### 🌐 Live Cloud Deployment
+The application is deployed and running live on Render:
+
+👉 **[https://infosys-batch4-team-c-ml-equipment.onrender.com/](https://infosys-batch4-team-c-ml-equipment.onrender.com/)**
+
+- **Platform**: Render (Web Service)
+- **Runtime**: Python 3.10.12 with Streamlit & Scikit-learn
+- **Security**: Full HTTPS / TLS encryption
+
+---
+
+### 💻 Local Environment Setup
+
+#### 1. Prerequisites
 - Python 3.10+ installed on your system.
 - Recommended: Visual Studio Code.
 
-### 2. Environment Setup
+#### 2. Local Setup
 Clone or navigate to the project directory:
 ```bash
-cd "c:\Users\HII\Desktop\ml.infosys"
+git clone https://github.com/nityarag123/infosys-batch4-team-c-ml-equipment-failure.git
+cd infosys-batch4-team-c-ml-equipment-failure
 ```
 
 Create and activate a virtual environment:
@@ -209,17 +231,17 @@ Install required packages:
 pip install -r requirements.txt
 ```
 
-### 3. Launch the Application
+#### 3. Launch the Application Locally
 Run the Streamlit application:
 ```powershell
 streamlit run app.py
 ```
 
 The application will automatically:
-1. Verify and clean the `ai4i2020.csv` dataset.
-2. Initialize and seed the SQLite database `database/maintenance.db`.
+1. Verify and load the `data/ai4i2020.csv` dataset.
+2. Initialize and seed the SQLite database `data/maintenance.db`.
 3. Check and load the trained Random Forest model (or train on cold start if missing).
-4. Launch the web dashboard at `http://localhost:8501`.
+4. Launch the local web dashboard at `http://localhost:8501`.
 
 ---
 
